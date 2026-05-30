@@ -1,0 +1,473 @@
+/* ============================================================
+   CIVIC-AI Workshop — Stylesheet
+   Palette: warm cream · navy anchor · cardinal red · orchid · gold
+   Fonts: Nunito (body) + Crimson Pro (display)
+   ============================================================ */
+
+:root {
+  --cream:          #F6F1E8;
+  --cream-dark:     #EDE5D4;
+  --dark-surface:   #162040;
+  --primary-text:   #1C2B4A;
+  --secondary-text: #5C6070;
+  --text-on-dark:   #F6F1E8;
+  --cardinal:       #8C1515;
+  --orchid:         #8B5E96;
+  --gold:           #C4963A;
+  --gold-faint:     rgba(196, 150, 58, 0.35);
+  --max-width:      900px;
+}
+
+/* --- RESET & BASE ----------------------------------------- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 11pt;
+  line-height: 1.65;
+  background: var(--cream);
+  color: var(--primary-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--cardinal);
+  text-decoration: underline;
+}
+
+/* --- NAVBAR ----------------------------------------------- */
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--dark-surface);
+  border-bottom: 1px solid var(--gold-faint);
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav-brand {
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-on-dark);
+  letter-spacing: 0.03em;
+  padding: 0.7rem 0;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+.nav-brand:hover { color: var(--gold); text-decoration: none; }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.7rem 0.75rem;
+  color: rgba(246, 241, 232, 0.65);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text-on-dark);
+  border-bottom-color: var(--cardinal);
+  text-decoration: none;
+}
+
+/* --- HERO ------------------------------------------------- */
+#hero {
+  background:
+    linear-gradient(rgba(22, 32, 64, 0.72), rgba(22, 32, 64, 0.82)),
+    url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=80')
+    center / cover no-repeat;
+  background-color: var(--dark-surface); /* fallback */
+  padding: 6rem 1.5rem 5.5rem;
+  text-align: center;
+  color: var(--text-on-dark);
+  border-bottom: 1px solid var(--gold-faint);
+}
+
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero-label {
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.hero-acronym-small {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(246, 241, 232, 0.55);
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+#hero h1 {
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  font-size: clamp(2.3rem, 5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-on-dark);
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  text-wrap: balance;
+}
+
+#hero h1 .hi {
+  color: var(--gold);
+}
+
+.hero-meta {
+  font-size: 1.2rem;
+  color: rgba(246, 241, 232, 0.85);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-meta strong {
+  color: var(--text-on-dark);
+  font-weight: 700;
+}
+
+.hero-meta .sep {
+  opacity: 0.4;
+  margin: 0 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.9rem;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--cardinal);
+  color: var(--text-on-dark);
+}
+.btn-primary:hover {
+  background: #a01818;
+  color: var(--text-on-dark);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* --- SECTIONS --------------------------------------------- */
+section {
+  padding: 4rem 1.5rem;
+  border-top: 1px solid var(--gold-faint);
+}
+
+section:nth-of-type(even) {
+  background: var(--cream-dark);
+}
+
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+section h2 {
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+/* --- ABOUT ------------------------------------------------ */
+#about p {
+  max-width: 720px;
+  margin-bottom: 0.85rem;
+  color: var(--primary-text);
+}
+
+.theme-list {
+  list-style: none;
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.theme-list li {
+  padding: 0.6rem 0.9rem 0.6rem 1.1rem;
+  border-left: 3px solid var(--orchid);
+  color: var(--primary-text);
+  background: rgba(139, 94, 150, 0.05);
+  border-radius: 0 3px 3px 0;
+  line-height: 1.55;
+}
+
+.theme-list li strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--primary-text);
+}
+
+/* --- PROGRAMME -------------------------------------------- */
+.programme-days {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 580px) {
+  .programme-days { grid-template-columns: 1fr; }
+}
+
+.day-card {
+  background: var(--cream);
+  border: 1px solid var(--cream-dark);
+  border-top: 3px solid var(--gold);
+  border-radius: 4px;
+  padding: 1.5rem 1.25rem;
+}
+
+.day-card h3 {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin-bottom: 0.2rem;
+}
+
+.day-label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--cardinal);
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+}
+
+.schedule-row {
+  display: flex;
+  gap: 0.85rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--cream-dark);
+  font-size: 0.88rem;
+  align-items: baseline;
+}
+.schedule-row:last-child { border-bottom: none; }
+
+.s-time {
+  color: var(--secondary-text);
+  min-width: 80px;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  padding-top: 0.1rem;
+}
+
+.s-event { color: var(--primary-text); line-height: 1.45; }
+
+.s-type {
+  display: block;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--orchid);
+  font-weight: 700;
+  margin-bottom: 0.1rem;
+}
+
+/* --- SPEAKERS --------------------------------------------- */
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 2rem 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.speaker-card { text-align: center; }
+
+.speaker-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+  margin: 0 auto 0.85rem;
+  background: var(--cream-dark);
+  border: 2px solid rgba(139, 94, 150, 0.35);
+}
+
+.speaker-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.speaker-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--primary-text);
+  margin-bottom: 0.15rem;
+}
+
+.speaker-affil {
+  font-size: 0.8rem;
+  color: var(--secondary-text);
+  margin-bottom: 0.4rem;
+}
+
+.speaker-talk {
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--primary-text);
+  line-height: 1.4;
+}
+
+/* --- ORGANIZERS ------------------------------------------- */
+.organizers-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2rem;
+  margin-top: 0.5rem;
+}
+
+.organizer-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.organizer-photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--cream-dark);
+  border: 2px solid var(--gold-faint);
+}
+
+.organizer-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.organizer-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--primary-text);
+}
+
+.organizer-affil {
+  font-size: 0.8rem;
+  color: var(--secondary-text);
+}
+
+/* --- REGISTRATION ----------------------------------------- */
+.reg-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.date-chip {
+  background: var(--dark-surface);
+  color: var(--text-on-dark);
+  border-radius: 4px;
+  padding: 0.85rem 1.4rem;
+  min-width: 170px;
+}
+
+.chip-label {
+  display: block;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.chip-date {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* --- CONTACT ---------------------------------------------- */
+#contact p { margin-bottom: 0.6rem; }
+#contact a { color: var(--cardinal); }
+#contact a:hover { text-decoration: underline; }
+
+/* --- FOOTER ----------------------------------------------- */
+footer {
+  background: var(--dark-surface);
+  color: rgba(246, 241, 232, 0.45);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  border-top: 1px solid var(--gold-faint);
+}
+
+/* --- MOBILE NAV ------------------------------------------- */
+@media (max-width: 640px) {
+  .nav-inner { flex-direction: column; align-items: flex-start; gap: 0; }
+  .nav-links { width: 100%; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; }
+  .nav-links a { white-space: nowrap; padding: 0.5rem 0.6rem; font-size: 0.75rem; }
+  #hero { padding: 4rem 1.25rem 3.5rem; }
+}

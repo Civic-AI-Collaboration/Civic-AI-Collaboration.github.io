@@ -3,290 +3,307 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CIVIC-AI Workshop — Coming Soon</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap');
+  <title>CIVIC-AI Workshop — July 13–14, 2025</title>
+  <meta name="description" content="A workshop on collaborative intelligence, the future of work, and cross-cultural perspectives in AI. July 13–14, 2025, Singapore." />
 
-    :root {
-      --sage: #7a9e7e;
-      --moss: #4a7c59;
-      --sky: #b8d4e8;
-      --blush: #e8c4b8;
-      --sand: #f5ede0;
-      --dusk: #8b7355;
-      --dark: #3a3028;
-      --white: #faf8f4;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background-color: var(--sand);
-      color: var(--dark);
-      font-family: 'Nunito', sans-serif;
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* Watercolor background layers */
-    .bg-layer {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .bg-layer svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Floating soot sprites */
-    .soot-container {
-      position: fixed;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .soot {
-      position: absolute;
-      border-radius: 50%;
-      background: radial-gradient(circle at 35% 35%, #5a4a3a, #1a1008);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: floatSoot linear infinite;
-      opacity: 0.85;
-    }
-
-    .soot::before, .soot::after {
-      content: '★';
-      position: absolute;
-      color: white;
-      font-size: 0.25em;
-    }
-    .soot::before { top: 28%; left: 22%; }
-    .soot::after  { top: 28%; right: 22%; }
-
-    @keyframes floatSoot {
-      0%   { transform: translate(0, 0) rotate(0deg); }
-      25%  { transform: translate(15px, -20px) rotate(10deg); }
-      50%  { transform: translate(-10px, -35px) rotate(-5deg); }
-      75%  { transform: translate(20px, -50px) rotate(8deg); }
-      100% { transform: translate(5px, -80px) rotate(-3deg); opacity: 0; }
-    }
-
-    /* Main content */
-    main {
-      position: relative;
-      z-index: 2;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .bath-sign {
-      font-family: 'Crimson Pro', serif;
-      font-style: italic;
-      font-size: clamp(0.85rem, 2vw, 1.1rem);
-      color: var(--moss);
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-      opacity: 0.8;
-    }
-
-    h1 {
-      font-size: clamp(3rem, 8vw, 5.5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      background: linear-gradient(135deg, var(--moss) 0%, var(--dusk) 50%, var(--sage) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 0.5rem;
-      filter: drop-shadow(0 2px 8px rgba(74,124,89,0.15));
-    }
-
-    .acronym {
-      font-size: clamp(0.65rem, 1.5vw, 0.8rem);
-      color: var(--dusk);
-      letter-spacing: 0.12em;
-      margin-bottom: 2rem;
-      opacity: 0.75;
-      max-width: 520px;
-      line-height: 1.8;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.55);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.7);
-      border-radius: 24px;
-      padding: 2.5rem 3rem;
-      max-width: 540px;
-      width: 100%;
-      box-shadow: 0 8px 32px rgba(74,124,89,0.08), 0 2px 8px rgba(0,0,0,0.04);
-    }
-
-    .card p {
-      font-family: 'Crimson Pro', serif;
-      font-size: 1.25rem;
-      line-height: 1.7;
-      color: var(--dark);
-      margin-bottom: 1.5rem;
-    }
-
-    .card p em {
-      color: var(--moss);
-    }
-
-    .coming-soon {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: linear-gradient(135deg, var(--sage), var(--moss));
-      color: white;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 0.6rem 1.4rem;
-      border-radius: 50px;
-      box-shadow: 0 4px 14px rgba(74,124,89,0.3);
-    }
-
-    .spirals {
-      margin-top: 2.5rem;
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .spirit-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--sage);
-      animation: pulse 2s ease-in-out infinite;
-    }
-    .spirit-dot:nth-child(2) { animation-delay: 0.3s; background: var(--dusk); }
-    .spirit-dot:nth-child(3) { animation-delay: 0.6s; background: var(--blush); }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.5; }
-      50%       { transform: scale(1.5); opacity: 1; }
-    }
-
-    .footer-note {
-      margin-top: 3rem;
-      font-size: 0.75rem;
-      color: var(--dusk);
-      opacity: 0.6;
-      letter-spacing: 0.08em;
-    }
-
-    /* Totoro silhouette in corner */
-    .totoro {
-      position: fixed;
-      bottom: 0;
-      right: 2rem;
-      z-index: 3;
-      opacity: 0.18;
-      animation: totalBreath 4s ease-in-out infinite;
-    }
-
-    @keyframes totalBreath {
-      0%, 100% { transform: scaleY(1); }
-      50%       { transform: scaleY(1.04); }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Watercolor background -->
-  <div class="bg-layer">
-    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <filter id="blur1"><feGaussianBlur stdDeviation="40"/></filter>
-        <filter id="blur2"><feGaussianBlur stdDeviation="60"/></filter>
-      </defs>
-      <!-- Sky wash -->
-      <rect width="1440" height="900" fill="#eef6f0"/>
-      <!-- Watercolor blobs -->
-      <ellipse cx="200" cy="150" rx="380" ry="220" fill="#b8d4e8" opacity="0.35" filter="url(#blur1)"/>
-      <ellipse cx="1200" cy="100" rx="320" ry="200" fill="#c8e6d4" opacity="0.3" filter="url(#blur1)"/>
-      <ellipse cx="720" cy="750" rx="500" ry="200" fill="#e8c4b8" opacity="0.25" filter="url(#blur2)"/>
-      <ellipse cx="100" cy="800" rx="280" ry="160" fill="#7a9e7e" opacity="0.15" filter="url(#blur2)"/>
-      <ellipse cx="1350" cy="700" rx="260" ry="180" fill="#b8d4e8" opacity="0.2" filter="url(#blur2)"/>
-      <!-- Soft green hills at bottom -->
-      <ellipse cx="300" cy="950" rx="500" ry="220" fill="#7a9e7e" opacity="0.2" filter="url(#blur1)"/>
-      <ellipse cx="1100" cy="920" rx="450" ry="200" fill="#4a7c59" opacity="0.12" filter="url(#blur1)"/>
-    </svg>
-  </div>
-
-  <!-- Soot sprites -->
-  <div class="soot-container" id="sootContainer"></div>
-
-  <!-- Totoro silhouette -->
-  <div class="totoro">
-    <svg width="160" height="200" viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Simple Totoro silhouette -->
-      <ellipse cx="80" cy="130" rx="65" ry="70" fill="#3a3028"/>
-      <ellipse cx="80" cy="90" rx="48" ry="52" fill="#3a3028"/>
-      <!-- Ears -->
-      <ellipse cx="45" cy="48" rx="14" ry="22" fill="#3a3028" transform="rotate(-10 45 48)"/>
-      <ellipse cx="115" cy="48" rx="14" ry="22" fill="#3a3028" transform="rotate(10 115 48)"/>
-      <!-- Belly -->
-      <ellipse cx="80" cy="140" rx="40" ry="45" fill="#5a5040" opacity="0.5"/>
-    </svg>
-  </div>
-
-  <main>
-    <h1>CIVIC-AI</h1>
-
-    <div class="coming-soon">
-      <span>✦</span> Coming Soon <span>✦</span>
+  <!-- ======================================================
+       NAVBAR
+  ====================================================== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#hero">CIVIC-AI</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#programme">Programme</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#organizers">Organizers</a></li>
+        <li><a href="#registration">Registration</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="spirals">
-      <div class="spirit-dot"></div>
-      <div class="spirit-dot"></div>
-      <div class="spirit-dot"></div>
+  <!-- ======================================================
+       HERO
+  ====================================================== -->
+  <header id="hero">
+    <div class="hero-inner">
+      <p class="hero-label">July 13–14, 2025</p>
+      <h1>Collaborative Intelligence, Voices, Insights, and Cross-cultural Perspectives in AI</h1>
+      <p class="hero-acronym-small">CIVIC-AI</p>
+      <p class="hero-meta">
+        📍 <strong>Singapore</strong>
+      </p>
+      <a href="#registration" class="btn btn-primary">Register Now</a>
     </div>
-  </main>
+  </header>
 
+  <!-- ======================================================
+       ABOUT
+  ====================================================== -->
+  <section id="about">
+    <div class="section-inner">
+      <h2>About</h2>
+      <p>
+        CIVIC-AI is a workshop bringing together researchers to examine the
+        interplay between artificial intelligence, work, and society.
+      </p>
+      <p>Our central questions:</p>
+      <ul class="theme-list">
+        <li>
+          <strong>Future of Work &amp; Automation</strong>
+          Which professions and tasks are being automated away, and which are
+          being augmented? What does the evidence tell us about the real shape
+          of displacement — and who bears its costs?
+        </li>
+        <li>
+          <strong>Human Advantage</strong>
+          What constitutes irreducible human value in a world where a large
+          fraction of knowledge work can be automated? How do we define,
+          measure, and support it?
+        </li>
+        <li>
+          <strong>Cross-cultural Dimensions</strong>
+          How do cultural context, economic development, and policy environment
+          shape AI adoption, usage norms, and the lived experience of automation
+          across different societies?
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       PROGRAMME
+  ====================================================== -->
+  <section id="programme">
+    <div class="section-inner">
+      <h2>Programme</h2>
+      <div class="programme-days">
+
+        <!-- Day 1 -->
+        <div class="day-card">
+          <span class="day-label">Day 1 &nbsp;·&nbsp; July 13</span>
+          <h3>Invited Talks</h3>
+
+          <div class="schedule-row">
+            <span class="s-time">09:00</span>
+            <span class="s-event"><span class="s-type">Opening</span>Welcome &amp; Framing</span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-time">09:30</span>
+            <span class="s-event"><span class="s-type">Keynote</span>Talk TBA</span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-time">10:30</span>
+            <span class="s-event"><span class="s-type">Break</span></span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-time">11:00</span>
+            <span class="s-event"><span class="s-type">Keynote</span>Talk TBA</span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-time">12:00</span>
+            <span class="s-event"><span class="s-type">Lunch</span></span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-time">13:30</span>
+            <span class="s-event"><span class="s-type">Keynote</span>Talk TBA</span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-time">14:30</span>
+            <span class="s-event"><span class="s-type">Keynote</span>Talk TBA</span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-time">15:30</span>
+            <span class="s-event"><span class="s-type">Break</span></span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-time">16:00</span>
+            <span class="s-event"><span class="s-type">Panel</span>Discussion TBA</span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-time">17:30</span>
+            <span class="s-event"><span class="s-type">Close</span>Day 1 Wrap-up</span>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-card">
+          <span class="day-label">Day 2 &nbsp;·&nbsp; July 14</span>
+          <h3>Research Brainstorming</h3>
+
+          <div class="schedule-row">
+            <span class="s-time">09:00</span>
+            <span class="s-event"><span class="s-type">Opening</span>Framing the Day</span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-time">09:30</span>
+            <span class="s-event"><span class="s-type">Workshop</span>Breakout Groups</span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-time">11:00</span>
+            <span class="s-event"><span class="s-type">Break</span></span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-time">11:15</span>
+            <span class="s-event"><span class="s-type">Plenary</span>Group Readouts &amp; Synthesis</span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-time">12:30</span>
+            <span class="s-event"><span class="s-type">Close</span>Closing &amp; Next Steps</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       SPEAKERS
+  ====================================================== -->
+  <section id="speakers">
+    <div class="section-inner">
+      <h2>Invited Speakers</h2>
+      <div class="speakers-grid">
+
+        <div class="speaker-card">
+          <div class="speaker-photo">
+            <!-- <img src="img/speakers/name.jpg" alt="Speaker Name"> -->
+          </div>
+          <p class="speaker-name">Speaker Name</p>
+          <p class="speaker-affil">Institution</p>
+          <p class="speaker-talk">Talk title TBA</p>
+        </div>
+
+        <div class="speaker-card">
+          <div class="speaker-photo">
+            <!-- <img src="img/speakers/name.jpg" alt="Speaker Name"> -->
+          </div>
+          <p class="speaker-name">Speaker Name</p>
+          <p class="speaker-affil">Institution</p>
+          <p class="speaker-talk">Talk title TBA</p>
+        </div>
+
+        <div class="speaker-card">
+          <div class="speaker-photo">
+            <!-- <img src="img/speakers/name.jpg" alt="Speaker Name"> -->
+          </div>
+          <p class="speaker-name">Speaker Name</p>
+          <p class="speaker-affil">Institution</p>
+          <p class="speaker-talk">Talk title TBA</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       ORGANIZERS
+  ====================================================== -->
+  <section id="organizers">
+    <div class="section-inner">
+      <h2>Organizers</h2>
+      <div class="organizers-grid">
+
+        <div class="organizer-card">
+          <div class="organizer-photo">
+            <!-- <img src="img/organizers/name.jpg" alt="Name"> -->
+          </div>
+          <div>
+            <p class="organizer-name">Organizer Name</p>
+            <p class="organizer-affil">Institution</p>
+          </div>
+        </div>
+
+        <div class="organizer-card">
+          <div class="organizer-photo">
+            <!-- <img src="img/organizers/name.jpg" alt="Name"> -->
+          </div>
+          <div>
+            <p class="organizer-name">Organizer Name</p>
+            <p class="organizer-affil">Institution</p>
+          </div>
+        </div>
+
+        <div class="organizer-card">
+          <div class="organizer-photo">
+            <!-- <img src="img/organizers/name.jpg" alt="Name"> -->
+          </div>
+          <div>
+            <p class="organizer-name">Organizer Name</p>
+            <p class="organizer-affil">Institution</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       REGISTRATION
+  ====================================================== -->
+  <section id="registration">
+    <div class="section-inner">
+      <h2>Registration</h2>
+      <div class="reg-dates">
+        <div class="date-chip">
+          <span class="chip-label">Registration Deadline</span>
+          <span class="chip-date">TBA</span>
+        </div>
+      </div>
+      <a href="#" class="btn btn-primary">Register Now</a>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       CONTACT
+  ====================================================== -->
+  <section id="contact">
+    <div class="section-inner">
+      <h2>Contact</h2>
+      <p>For questions or inquiries, please reach out to the organising committee:</p>
+      <p>
+        <a href="mailto:civicaiworkshopsg@gmail.com">civicaiworkshopsg@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       FOOTER
+  ====================================================== -->
+  <footer>
+    CIVIC-AI Workshop 2025 &nbsp;·&nbsp; Singapore
+  </footer>
+
+  <!-- ======================================================
+       JS — active nav link on scroll
+  ====================================================== -->
   <script>
-    // Spawn soot sprites
-    const container = document.getElementById('sootContainer');
-    function spawnSoot() {
-      const soot = document.createElement('div');
-      soot.classList.add('soot');
-      const size = 14 + Math.random() * 18;
-      soot.style.width  = size + 'px';
-      soot.style.height = size + 'px';
-      soot.style.left   = Math.random() * 100 + 'vw';
-      soot.style.top    = (70 + Math.random() * 30) + 'vh';
-      const dur = 4 + Math.random() * 5;
-      soot.style.animationDuration = dur + 's';
-      soot.style.animationDelay = Math.random() * -dur + 's';
-      container.appendChild(soot);
-      setTimeout(() => soot.remove(), (dur + 1) * 1000);
-    }
+    const sections = document.querySelectorAll('header[id], section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
 
-    // Initial batch
-    for (let i = 0; i < 12; i++) {
-      setTimeout(spawnSoot, i * 400);
-    }
-    // Keep spawning
-    setInterval(spawnSoot, 800);
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.toggle(
+              'active',
+              link.getAttribute('href') === '#' + entry.target.id
+            );
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => observer.observe(s));
   </script>
+
 </body>
 </html>
