@@ -405,6 +405,19 @@ section h2 {
   display: block;
 }
 
+/* Lab logo variant — wider, no circular crop */
+.organizer-logo {
+  width: 120px;
+  height: 56px;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.organizer-logo img {
+  object-fit: contain;
+  padding: 4px;
+}
+
 .organizer-name {
   font-weight: 700;
   font-size: 0.9rem;
