@@ -105,7 +105,7 @@ a:hover {
 #hero {
   background:
     linear-gradient(rgba(22, 32, 64, 0.72), rgba(22, 32, 64, 0.82)),
-    url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=80')
+    url('img/hero_nus_com3.jpg')
     center / cover no-repeat;
   background-color: var(--dark-surface); /* fallback */
   padding: 6rem 1.5rem 5.5rem;
