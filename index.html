@@ -18,7 +18,7 @@
   ====================================================== -->
   <nav id="navbar">
     <div class="nav-inner">
-      <a class="nav-brand" href="#hero">CIVIC-AI</a>
+      <a class="nav-brand" href="#hero">CIVIC-AI 2026</a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#programme">Programme</a></li>
@@ -41,6 +41,23 @@
       <p class="hero-meta">
         📍 <strong>Singapore</strong>
       </p>
+
+      <!-- Countdown timer -->
+      <div class="countdown-wrap">
+        <div class="countdown-timer" id="countdown">
+          <div class="countdown-unit"><span id="cd-weeks">--</span><label>Weeks</label></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit"><span id="cd-days">--</span><label>Days</label></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit"><span id="cd-hours">--</span><label>Hours</label></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit"><span id="cd-mins">--</span><label>Mins</label></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit"><span id="cd-secs">--</span><label>Secs</label></div>
+        </div>
+        <p class="countdown-label">Registration closes <strong>July 6, 2026</strong> &mdash; 1 week before the workshop</p>
+      </div>
+
       <a href="#registration" class="btn btn-primary">Register Now</a>
     </div>
   </header>
@@ -51,12 +68,15 @@
   <section id="about">
     <div class="section-inner">
       <h2>About</h2>
-      <p>
-        CIVIC-AI is a workshop bringing together researchers to examine the
-        interplay between artificial intelligence, work, and society.
-      </p>
+      <p>CIVIC-AI is a workshop bringing together researchers to examine the interplay between artificial intelligence, work, and society. This inaugural 2026 workshop kicks off the collaboration between Stanford and NUS on these matters, involving policy makers and funding agencies as key collaborators in informing the research agenda and shaping outcomes.</p>
       <p>Our central questions:</p>
       <ul class="theme-list">
+        <li>
+          <strong>Cross-cultural Dimensions</strong>
+          How do cultural context, economic development, and policy environment
+          shape AI adoption, usage norms, and the lived experience of automation
+          across different societies?
+        </li>
         <li>
           <strong>Future of Work &amp; Automation</strong>
           Which professions and tasks are being automated away, and which are
@@ -69,12 +89,6 @@
           fraction of knowledge work can be automated? How do we define,
           measure, and support it?
         </li>
-        <li>
-          <strong>Cross-cultural Dimensions</strong>
-          How do cultural context, economic development, and policy environment
-          shape AI adoption, usage norms, and the lived experience of automation
-          across different societies?
-        </li>
       </ul>
     </div>
   </section>
@@ -85,12 +99,13 @@
   <section id="programme">
   <div class="section-inner">
     <h2>Programme</h2>
+    <p class="programme-tz">All times are in <strong>Singapore Time (SGT, UTC+8)</strong>.</p>
     <div class="programme-days">
 
       <!-- Day 1 -->
       <div class="day-card">
         <span class="day-label">Day 1 &nbsp;·&nbsp; July 13</span>
-        <h3>Social Intelligence</h3>
+        <h3>Theme 1 &ndash; Social Intelligence</h3>
 
         <div class="schedule-row">
           <span class="s-time">09:00–09:15</span>
@@ -98,11 +113,11 @@
         </div>
         <div class="schedule-row">
           <span class="s-time">09:15–09:55</span>
-          <span class="s-event"><span class="s-type">Invited Talk</span>Invited Talk 1 &mdash; TBD</span>
+          <span class="s-event"><span class="s-type">Invited Talk</span><a href="#speaker-yohan">Invited Talk 1 &mdash; Yohan Jo</a></span>
         </div>
         <div class="schedule-row">
           <span class="s-time">09:55–10:35</span>
-          <span class="s-event"><span class="s-type">Invited Talk</span>Invited Talk 2 &mdash; TBD</span>
+          <span class="s-event"><span class="s-type">Invited Talk</span><a href="#speaker-nancy">Invited Talk 2 &mdash; Nancy F. Chen</a></span>
         </div>
         <div class="schedule-row">
           <span class="s-time">10:35–10:55</span>
@@ -110,7 +125,7 @@
         </div>
         <div class="schedule-row">
           <span class="s-time">10:55–11:35</span>
-          <span class="s-event"><span class="s-type">Invited Talk</span>Invited Talk 3 &mdash; Lizi Liao</span>
+          <span class="s-event"><span class="s-type">Invited Talk</span><a href="#speaker-lizi">Invited Talk 3 &mdash; Lizi Liao</a></span>
         </div>
         <div class="schedule-row">
           <span class="s-time">11:35–11:55</span>
@@ -122,7 +137,7 @@
         </div>
         <div class="schedule-row">
           <span class="s-time">13:00–14:30</span>
-          <span class="s-event"><span class="s-type">Invited Talk</span>NAII Talk &mdash; Diyi Yang</span>
+          <span class="s-event"><span class="s-type">Keynote</span><a href="#speaker-diyi">NAII Keynote &mdash; Diyi Yang</a></span>
         </div>
         <div class="schedule-row">
           <span class="s-time">14:30–15:30</span>
@@ -145,7 +160,7 @@
         <!-- Day 2 -->
         <div class="day-card">
           <span class="day-label">Day 2 &nbsp;·&nbsp; July 14</span>
-          <h3>Future of Work With AI Agents in Singapore</h3>
+          <h3>Theme 2 &ndash; Future of Work With AI Agents in Singapore</h3>
 
           <div class="schedule-row">
             <span class="s-time">09:00–09:20</span>
@@ -193,31 +208,49 @@
       <h2>Invited Speakers</h2>
       <div class="speakers-grid">
 
-        <div class="speaker-card">
+        <!-- Diyi Yang — KEYNOTE -->
+        <div class="speaker-card" id="speaker-diyi">
+          <div class="speaker-badge">KEYNOTE</div>
           <div class="speaker-photo">
             <img src="img/speakers/diyi_yang.jpg" alt="Diyi Yang">
           </div>
           <p class="speaker-name"><a href="https://cs.stanford.edu/~diyiy/" target="_blank" rel="noopener">Diyi Yang</a></p>
           <p class="speaker-affil">Stanford Univ.</p>
-          <p class="speaker-talk">Talk title TBA</p>
+          <p class="speaker-talk-title">Optimizing Human-AI Collaboration</p>
+          <p class="speaker-abstract">Recent advances in large language models (LLMs) have transformed human-AI interaction, however, building effective collaboration requires AI systems that truly understand the people they work with. In this talk, we first audit the U.S. workforce to assess the impact of automation and augmentation on the future of work, guiding the development of AI agents that reflect workers' perspectives. We then introduce General User Models (GUMs), which learn about users by observing any computer interaction and constructing propositions about user knowledge, preferences, and context. We further present NAP (Next Action Prediction), a framework for anticipating user intent by reasoning over rich multimodal sequences of human-computer interactions, where modeling long interaction histories enables significantly more accurate predictions. Overall, this talk highlights how to develop AI systems that are proactive and capable of fostering meaningful collaboration with human users.</p>
         </div>
 
-        <div class="speaker-card">
+        <!-- Yohan Jo -->
+        <div class="speaker-card" id="speaker-yohan">
           <div class="speaker-photo">
             <img src="img/speakers/yohan_jo.jpg" alt="Yohan Jo">
           </div>
           <p class="speaker-name"><a href="https://yohanjo.github.io/" target="_blank" rel="noopener">Yohan Jo</a></p>
           <p class="speaker-affil">Seoul National Univ.</p>
-          <p class="speaker-talk">Talk title TBA</p>
+          <p class="speaker-talk-title">Talk title TBA</p>
+          <p class="speaker-abstract">Abstract TBA</p>
         </div>
 
-        <div class="speaker-card">
+        <!-- Nancy F. Chen -->
+        <div class="speaker-card" id="speaker-nancy">
+          <div class="speaker-photo">
+            <img src="img/speakers/nancy_chen.jpg" alt="Nancy F. Chen">
+          </div>
+          <p class="speaker-name"><a href="https://sites.google.com/site/nancyfchen/home" target="_blank" rel="noopener">Nancy F. Chen</a></p>
+          <p class="speaker-affil">A*STAR I2R, Singapore</p>
+          <p class="speaker-talk-title">Talk title TBA</p>
+          <p class="speaker-abstract">Abstract TBA</p>
+        </div>
+
+        <!-- Lizi Liao -->
+        <div class="speaker-card" id="speaker-lizi">
           <div class="speaker-photo">
             <img src="img/speakers/lizi_liao.jpg" alt="Lizi Liao">
           </div>
           <p class="speaker-name"><a href="https://liziliao.github.io/" target="_blank" rel="noopener">Lizi Liao</a></p>
           <p class="speaker-affil">Singapore Management Univ.</p>
-          <p class="speaker-talk">Talk title TBA</p>
+          <p class="speaker-talk-title">Talk title TBA</p>
+          <p class="speaker-abstract">Abstract TBA</p>
         </div>
 
       </div>
@@ -266,25 +299,43 @@
   <section id="registration">
     <div class="section-inner">
       <h2>Registration</h2>
-      <div class="reg-dates">
+      <div class="reg-dates reg-centered">
         <div class="date-chip">
           <span class="chip-label">Registration Deadline</span>
-          <span class="chip-date">TBA</span>
+          <span class="chip-date">July 6, 2026</span>
         </div>
       </div>
+      <p class="reg-note">Registration closes one week before the workshop begins on July 13, 2026.</p>
       <a href="#" class="btn btn-primary">Register Now</a>
     </div>
   </section>
 
   <!-- ======================================================
-       CONTACT
+       CONTACT & ACKNOWLEDGEMENTS
   ====================================================== -->
   <section id="contact">
     <div class="section-inner">
-      <h2>Contact</h2>
-      <p>For questions or inquiries, please reach out to the organising committee:</p>
-      <p>
+      <h2>Contact and Acknowledgements</h2>
+      <p class="contact-intro">For questions or inquiries, please reach out to the organising committee:</p>
+      <p class="contact-email">
         <a href="mailto:civicaiworkshopsg@gmail.com">civicaiworkshopsg@gmail.com</a>
+      </p>
+
+      <h3 class="ack-heading">Supporting Agencies</h3>
+      <p>
+        This workshop is supported by the
+        <a href="https://www.mddi.gov.sg/" target="_blank" rel="noopener">Ministry of Digital Development and Information</a>
+        and the
+        <a href="https://www.mom.gov.sg/" target="_blank" rel="noopener">Ministry of Manpower</a>
+        of the Republic of Singapore.
+      </p>
+
+      <p class="ack-grant">
+        This workshop is generously funded by the
+        <a href="https://www.mddi.gov.sg/" target="_blank" rel="noopener">Ministry of Digital Development and Information</a>
+        of The Republic of Singapore, under its AI Visiting Professorship grant entitled
+        &ldquo;<a href="https://www.comp.nus.edu.sg/news/six-nus-computing-faculty-receive-grants-under-singapores-ai-visiting-professorship-aivp/" target="_blank" rel="noopener">Evaluating and Building Socially Intelligent Foundation Models</a>&rdquo;
+        (2025-02241).
       </p>
     </div>
   </section>
@@ -297,9 +348,40 @@
   </footer>
 
   <!-- ======================================================
-       JS — active nav link on scroll
+       JS — countdown timer + active nav link on scroll
   ====================================================== -->
   <script>
+    // ---- Countdown timer ----
+    // Workshop starts: July 13, 2026 09:00 SGT (UTC+8)
+    const WORKSHOP_START = new Date('2026-07-13T09:00:00+08:00');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = WORKSHOP_START - now;
+
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = '<span class="countdown-live">Workshop is live!</span>';
+        return;
+      }
+
+      const totalHours = Math.floor(diff / (1000 * 60 * 60));
+      const weeks  = Math.floor(totalHours / (7 * 24));
+      const days   = Math.floor((totalHours % (7 * 24)) / 24);
+      const hours  = Math.floor(totalHours % 24);
+      const mins   = Math.floor((diff / (1000 * 60)) % 60);
+      const secs   = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('cd-weeks').textContent = String(weeks).padStart(2, '0');
+      document.getElementById('cd-days').textContent  = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-mins').textContent  = String(mins).padStart(2, '0');
+      document.getElementById('cd-secs').textContent  = String(secs).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ---- Active nav link on scroll ----
     const sections = document.querySelectorAll('header[id], section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
 
