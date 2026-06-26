@@ -398,6 +398,7 @@ section h2 {
   line-height: 1.55;
   text-align: left;
   width: 100%;
+  margin-top: 0.85rem;
   margin-bottom: 0.5rem;
 }
 
@@ -418,6 +419,7 @@ section h2 {
   line-height: 1.55;
   text-align: left;
   width: 100%;
+  margin-bottom: 0.85rem;
 }
 
 /* Keep old .speaker-talk for backward compat */
