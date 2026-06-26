@@ -392,6 +392,15 @@ section h2 {
   margin-bottom: 0.75rem;
 }
 
+.speaker-bio {
+  font-size: 0.82rem;
+  color: var(--secondary-text);
+  line-height: 1.55;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
 .speaker-talk-title {
   font-family: 'Crimson Pro', serif;
   font-weight: 600;
