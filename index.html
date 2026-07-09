@@ -59,7 +59,13 @@
         <p class="countdown-label">Registration closes <strong>17:00 Thu, 9 Jul, 2026</strong> SGT</p>
       </div>
 
-      <a href="https://nus.syd1.qualtrics.com/jfe/form/SV_1XO2DRUD9dTvpDU" target="_blank" rel="noopener" class="btn btn-primary">Register Now</a>
+      <a
+        href="https://nus.syd1.qualtrics.com/jfe/form/SV_1XO2DRUD9dTvpDU"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-primary"
+        id="hero-register-cta"
+      >Register Now</a>
     </div>
   </header>
 
@@ -318,7 +324,14 @@
         </div>
       </div>
       <p class="reg-note">Registration is free. Day 1 is open to the public. Day 2 is by invitation only, and you can apply for an invitation in the registration form. Registration closes at 17:00 SGT on 9 Jul, 2026.</p>
-      <a href="https://nus.syd1.qualtrics.com/jfe/form/SV_1XO2DRUD9dTvpDU" target="_blank" rel="noopener" class="btn btn-primary">Register Now</a>
+      <p class="reg-status" id="registration-status" hidden>Registration is now closed.</p>
+      <a
+        href="https://nus.syd1.qualtrics.com/jfe/form/SV_1XO2DRUD9dTvpDU"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-primary"
+        id="registration-cta"
+      >Register Now</a>
     </div>
   </section>
 
@@ -369,6 +382,31 @@
        JS — countdown timer + active nav link on scroll
   ====================================================== -->
   <script>
+    // ---- Registration gate ----
+    const REGISTRATION_DEADLINE = new Date('2026-07-09T17:00:00+08:00');
+
+    function disableRegistrationIfClosed() {
+      const now = new Date();
+      if (now < REGISTRATION_DEADLINE) return;
+
+      const heroCta = document.getElementById('hero-register-cta');
+      const regCta = document.getElementById('registration-cta');
+      const status = document.getElementById('registration-status');
+
+      [heroCta, regCta].forEach(link => {
+        if (!link) return;
+        link.removeAttribute('href');
+        link.removeAttribute('target');
+        link.removeAttribute('rel');
+        link.classList.add('btn-disabled');
+        link.setAttribute('aria-disabled', 'true');
+        link.setAttribute('tabindex', '-1');
+        link.textContent = 'Registration Closed';
+      });
+
+      if (status) status.hidden = false;
+    }
+
     // ---- Countdown timer ----
     // Workshop starts: July 9, 2026 17:00 SGT (UTC+8)
     const WORKSHOP_START = new Date('2026-07-13T09:00:00+08:00');
@@ -396,6 +434,7 @@
       document.getElementById('cd-secs').textContent  = String(secs).padStart(2, '0');
     }
 
+    disableRegistrationIfClosed();
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
